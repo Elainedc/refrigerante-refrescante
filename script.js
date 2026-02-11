@@ -7,9 +7,21 @@ let active = 0 //o active começa em 0 porque é o item que está  ativo no mome
 
 //arrow function, jeito moderno de escrever funções, função do tipo arrow (flecha)
 next.onclick = () => {
-    console.log("Next")
-}
+    let activeOld = document.querySelector('.active')
+    activeOld.classList.remove('active') // pra remover a classe que tá ativa e ir para um outro item.
 
+    active = active >= count -1 ? 0 : active +1
+
+    list [1].classList.add('active')
+
+}
+// Lógica de programação é entender o passo a passo
 prev.onclick = () => {
-    console.log("Prev")
+    let activeOld = document.querySelector('.active')
+    activeOld.classList.remove('active') // pra remover a classe que tá ativa e ir para um outro item.
+
+    active = active <= 0 ? count -1 : active -1
+
+    list [1].classList.add('active')
+
 }
